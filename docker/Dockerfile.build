@@ -1,7 +1,6 @@
 FROM docker:latest
 
-RUN apk add --update make python nodejs nodejs-npm git
+RUN apk add --update make python nodejs nodejs-npm git curl
 RUN apk add ca-certificates && update-ca-certificates && apk add openssl
-RUN mkdir /opt
 RUN wget https://bootstrap.pypa.io/get-pip.py -O /opt/get-pip.py
 RUN python /opt/get-pip.py
