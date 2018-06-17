@@ -1,0 +1,7 @@
+FROM python:3.6.5-alpine3.7
+
+RUN apk add --update
+RUN pip install pipenv
+RUN mkdir /opt
+
+RUN python --version && pip --version && pipenv --version
