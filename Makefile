@@ -14,11 +14,13 @@ push-docker:
 
 build-pipenv:
 	docker build -t bradj/pipenv -f pipenv/Dockerfile.build pipenv/
-	docker tag bradj/pipenv bradj/pipenv:latest
-	docker tag bradj/pipenv bradj/pipenv:py3.6.5
+	docker tag bradj/pipenv bradj/pipenv:3.6
+
+	docker build -t bradj/pipenv -f pipenv/Dockerfile.3.7.build pipenv/
+	docker tag bradj/pipenv bradj/pipenv:3.7
 
 push-pipenv:
-	docker push bradj/pipenv:latest
-	docker push bradj/pipenv:py3.6.5
+	docker push bradj/pipenv:3.6
+	docker push bradj/pipenv:3.7
 
 .PHONY:
