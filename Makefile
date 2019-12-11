@@ -23,4 +23,11 @@ push-pipenv:
 	docker push bradj/pipenv:3.6
 	docker push bradj/pipenv:3.7
 
+build-ansible:
+	docker build -t bradj/ansible-runner -f ansible-runner/Dockerfile ansible-runner/
+	docker tag bradj/ansible-runner bradj/ansible-runner:latest
+
+push-ansible:
+	docker push bradj/ansible-runner:latest
+
 .PHONY:
